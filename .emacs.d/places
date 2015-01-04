@@ -1,0 +1,11 @@
+;;; -*- coding: utf-8 -*-
+(("/Users/christian/Development/clojure/clojure-noob/"
+  (dired-filename . "/Users/christian/Development/clojure/clojure-noob/src"))
+ ("/Users/christian/Development/clojure/clojure-noob/src/"
+  (dired-filename . "/Users/christian/Development/clojure/clojure-noob/src/clojure_noob"))
+ ("/Users/christian/Development/clojure/clojure-noob/src/clojure_noob/"
+  (dired-filename . "/Users/christian/Development/clojure/clojure-noob/src/clojure_noob/core.clj"))
+ ("/Users/christian/Development/clojure/clojure-noob/src/clojure_noob/core.clj" . 1486)
+ ("/Users/christian/Development/Web/react-slider/src/js/model/slider.js" . 522)
+ ("/Users/christian/.emacs.d/elpa/js2-mode-20141230.717/js2-mode-autoloads.el" . 1105)
+ ("/Users/christian/.emacs.d/customizations/ui.el" . 1431))

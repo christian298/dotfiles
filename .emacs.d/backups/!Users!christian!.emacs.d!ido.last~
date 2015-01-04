@@ -1,0 +1,29 @@
+;;; -*- coding: utf-8 -*-
+
+;; ----- ido-last-directory-list -----
+(
+ ("/Users/christian/.emacs.d/" . "customizations/")
+ ("/Users/christian/" . ".emacs.d/")
+)
+
+;; ----- ido-work-directory-list -----
+(
+ "/Users/christian/.emacs.d/customizations/"
+)
+
+;; ----- ido-work-file-list -----
+(
+ "ui.el"
+)
+
+;; ----- ido-dir-file-cache -----
+(
+ ("/Users/christian/.emacs.d/customizations/" (21672 26098 0 0) "ui.el" "themes.el" "shell-integration.el" "setup-js.el" "setup-clojure.el" "navigation.el" "misc.el" "elisp-editing.el" "editing.el" "../" "./")
+
+ ("/Users/christian/.emacs.d/" (21672 26263 0 0) "themes/" "README.md" "init.el" "elpa/" "customizations/" "auto-save-list/" ".gitignore" ".git/" "../" "./")
+
+ ("/Users/christian/" (21672 26213 0 0) "VirtualBox VMs/" "tmp/" "Public/" "prompt_agnoster_setup" "Pictures/" "Music/" "Movies/" "Library/" "Downloads/" "Documents/" "Development/" "Desktop/" "cminstaller/" "Applications/" ".zshrc_bak" ".zshrc.omz-uninstalled-20141213153021" ".zshrc-e" ".zshrc" ".zshenv" ".zsh_history" ".zsh-update" ".zprofile" ".zpreztorc" ".zprezto/" ".zlogout" ".zlogin" ".zhistory" ".zcompdump-Christian’s MacBook Pro-5.0.5" ".zcompdump-Christian’s MacBook Pro-5.0.2" ".zcompdump-Christian’s MacBook Pro (6)-5.0.5" ".zcompdump-Christian’s MacBook Pro (5)-5.0.5" ".zcompdump-Christian’s MacBook Pro (4)-5.0.5" ".zcompdump-Christian’s MacBook Pro (3)-5.0.5" ".zcompdump-Christian’s MacBook Pro (2)-5.0.5" ".zcompdump" ".zcompcache/" ".WebStorm9/" ".vimrc_backup" ".vimrc" ".viminfo" ".vim/" ".vagrant.d/" ".Trash/" ".subversion/" ".ssh/" ".rnd" ".rbenv/" ".nvimrc" ".nvimlog" ".nviminfo" ".nvim/" ".npm/" ".node-gyp/" ".mitmproxy/" ".m2/" ".local/" ".lein/" ".irb-history" ".histfile" ".gvimrc" ".gitconfig" ".gem/" ".emacs.d/" ".DS_Store" ".cups/" ".config/" ".codeintel/" ".CFUserTextEncoding" ".cache/" ".bashrc" ".bash_profile" ".bash_history" ".atom/" ".android/" "../" "./")
+)
+
+;; ----- ido-unc-hosts-cache -----
+t

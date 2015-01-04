@@ -1,0 +1,1 @@
+("~/Development/clojure/clojure-noob/" "~/Development/Web/react-slider/" "~/.emacs.d/")
