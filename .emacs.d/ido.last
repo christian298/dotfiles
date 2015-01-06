@@ -2,22 +2,32 @@
 
 ;; ----- ido-last-directory-list -----
 (
+ ("/Users/csandvoss/Code/pattern-lib/components/" . "headlineBox/")
+ ("/Users/csandvoss/Code/pattern-lib/" . "components/")
  ("/Users/christian/.emacs.d/" . "customizations/")
  ("/Users/christian/" . ".emacs.d/")
 )
 
 ;; ----- ido-work-directory-list -----
 (
+ "/Users/csandvoss/Code/pattern-lib/components/headlineBox/"
  "/Users/christian/.emacs.d/customizations/"
 )
 
 ;; ----- ido-work-file-list -----
 (
+ "demo.jsx"
  "ui.el"
 )
 
 ;; ----- ido-dir-file-cache -----
 (
+ ("/Users/csandvoss/Code/pattern-lib/components/headlineBox/" (21624 23011 0 0) "headlineBox.less" "headlineBox.jsx" "demo.jsx" "../" "./")
+
+ ("/Users/csandvoss/Code/pattern-lib/components/" (21620 31393 0 0) "teaserBox/" "plus/" "headlineBox/" ".DS_Store" "../" "./")
+
+ ("/Users/csandvoss/Code/pattern-lib/" (21624 17845 0 0) "webpack.config.js" "server.js" "pattern.jsx" "package.json" "node_modules/" "index.html" "components/" "bundle.js" ".DS_Store" "../" "./")
+
  ("/Users/christian/.emacs.d/customizations/" (21672 26098 0 0) "ui.el" "themes.el" "shell-integration.el" "setup-js.el" "setup-clojure.el" "navigation.el" "misc.el" "elisp-editing.el" "editing.el" "../" "./")
 
  ("/Users/christian/.emacs.d/" (21672 26263 0 0) "themes/" "README.md" "init.el" "elpa/" "customizations/" "auto-save-list/" ".gitignore" ".git/" "../" "./")

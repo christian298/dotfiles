@@ -1,9 +1,13 @@
 ;; javascript / html
 ;;(add-to-list 'auto-mode-alist '("\\.js$" . js-mode))
 (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
+(add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
 
-(add-hook 'js-mode-hook 'subword-mode)
+;;(add-hook 'js-mode-hook 'subword-mode)
+
+(add-hook 'js-mode-hook 'js2-minor-mode)
 (add-hook 'js2-mode-hook 'ac-js2-mode)
+
 (add-hook 'html-mode-hook 'subword-mode)
 (setq js-indent-level 2)
 (eval-after-load "sgml-mode"
