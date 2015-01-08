@@ -1,1 +1,1 @@
-("~/Development/clojure/clojure-noob/" "~/Development/Web/react-slider/" "~/.emacs.d/")
+("~/dotfiles/" "~/Development/generator-zal/" "~/Development/clojure/clojure-noob/" "~/Development/Web/react-slider/" "~/.emacs.d/")

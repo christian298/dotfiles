@@ -13,5 +13,5 @@
 ;; ----- smex-data -----
 (
  (replace-string . 1)
- (cider-jack-in . 6)
+ (cider-jack-in . 7)
 )

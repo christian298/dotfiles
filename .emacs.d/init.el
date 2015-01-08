@@ -68,6 +68,10 @@
     ;; git integration
     magit
 
+    ;; Evil VIM Mode
+    undo-tree
+    evil
+
     ;; Javascript
     ac-js2
 
@@ -143,3 +147,8 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(coffee-tab-width 2))
+
+
+(add-to-list 'load-path "~/.emacs.d/evil")
+(require 'evil)
+(evil-mode 1)
