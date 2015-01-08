@@ -1,17 +1,23 @@
 
 ;; ----- smex-history -----
 (
+ load-theme
+ web-mode
  cider-jack-in
  replace-string
  cd
  5x5
  arp
- dbx
- dig
 )
 
 ;; ----- smex-data -----
 (
  (replace-string . 1)
+<<<<<<< HEAD
  (cider-jack-in . 7)
+=======
+ (cider-jack-in . 6)
+ (web-mode . 1)
+ (load-theme . 2)
+>>>>>>> cdbf78ab6a99e61ddeb7aa6257d2b9ba78247ebb
 )

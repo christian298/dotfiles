@@ -1,4 +1,5 @@
 ;;; -*- coding: utf-8 -*-
+<<<<<<< HEAD
 (("/Users/christian/.zshrc" . 366)
  ("/Users/christian/Development/generator-zal/"
   (dired-filename . "/Users/christian/Development/generator-zal/package.json"))
@@ -13,3 +14,14 @@
  ("/Users/christian/Development/Web/react-slider/src/js/model/slider.js" . 522)
  ("/Users/christian/.emacs.d/elpa/js2-mode-20141230.717/js2-mode-autoloads.el" . 1105)
  ("/Users/christian/.emacs.d/customizations/ui.el" . 1431))
+=======
+(("/Users/csandvoss/Code/pattern-lib/"
+  (dired-filename . "/Users/csandvoss/Code/pattern-lib/index.html"))
+ ("/Users/csandvoss/Code/pattern-lib/index.html" . 41)
+ ("/Users/csandvoss/Code/pattern-lib/components/headlineBox/demo.jsx" . 227)
+ ("/Users/csandvoss/Code/pattern-lib/components/"
+  (dired-filename . "/Users/csandvoss/Code/pattern-lib/components/headlineBox"))
+ ("/Users/csandvoss/Code/pattern-lib/components/headlineBox/"
+  (dired-filename . "/Users/csandvoss/Code/pattern-lib/components/headlineBox/headlineBox.jsx"))
+ ("/Users/csandvoss/Code/pattern-lib/components/headlineBox/headlineBox.jsx" . 481))
+>>>>>>> cdbf78ab6a99e61ddeb7aa6257d2b9ba78247ebb

@@ -2,32 +2,46 @@
 
 ;; ----- ido-last-directory-list -----
 (
+<<<<<<< HEAD
  ("/Users/christian/Development/generator-zal/generators/" . "app/")
  ("/Users/christian/Development/generator-zal/" . "generators/")
  ("/Users/christian/Development/clojure/clojure-noob/src/" . "clojure_noob/")
  ("/Users/christian/Development/clojure/clojure-noob/" . "src/")
  ("/Users/christian/Development/clojure/" . "clojure-noob/")
  ("/Users/christian/Development/" . "clojure/")
+=======
+ ("/Users/csandvoss/Code/pattern-lib/components/" . "headlineBox/")
+ ("/Users/csandvoss/Code/pattern-lib/" . "components/")
+>>>>>>> cdbf78ab6a99e61ddeb7aa6257d2b9ba78247ebb
  ("/Users/christian/.emacs.d/" . "customizations/")
  ("/Users/christian/" . ".emacs.d/")
 )
 
 ;; ----- ido-work-directory-list -----
 (
+<<<<<<< HEAD
  "/Users/christian/Development/generator-zal/generators/app/"
  "/Users/christian/Development/clojure/clojure-noob/src/clojure_noob/"
+=======
+ "/Users/csandvoss/Code/pattern-lib/components/headlineBox/"
+>>>>>>> cdbf78ab6a99e61ddeb7aa6257d2b9ba78247ebb
  "/Users/christian/.emacs.d/customizations/"
 )
 
 ;; ----- ido-work-file-list -----
 (
+<<<<<<< HEAD
  "index.js"
  "core.clj"
+=======
+ "demo.jsx"
+>>>>>>> cdbf78ab6a99e61ddeb7aa6257d2b9ba78247ebb
  "ui.el"
 )
 
 ;; ----- ido-dir-file-cache -----
 (
+<<<<<<< HEAD
  ("/Users/christian/Development/generator-zal/generators/app/" (21549 55572 0 0) "templates/" "index.js" "_DS_Store" ".DS_Store" "../" "./")
 
  ("/Users/christian/Development/generator-zal/generators/" (21549 51387 0 0) "app/" "_DS_Store" ".DS_Store" "../" "./")
@@ -45,6 +59,13 @@
  ("/Users/christian/Development/" (21589 2125 0 0) "workspace/" "Web/" "test.scpt" "test.safariextension/" "swift/" "Ruby/" "rails_box/" "osx/" "nodejs/" "iOS/" "instr.trace/" "hero_medium_2x.jpg" "generator-zal/" "dart-sdk/" "clojure/" "christian298.github.io/" ".yo-rc.json" ".DS_Store" "../" "./")
 
  ("/Users/christian/" (21674 53635 0 0) "VirtualBox VMs/" "tmp/" "Public/" "prompt_agnoster_setup" "Pictures/" "Music/" "Movies/" "Library/" "Downloads/" "dotfiles/" "Documents/" "Development/" "Desktop/" "cminstaller/" "Applications/" ".zshrc_bak" ".zshrc.omz-uninstalled-20141213153021" ".zshrc-e" ".zshrc" ".zshenv" ".zsh_history" ".zsh-update" ".zprofile" ".zpreztorc" ".zprezto/" ".zlogout" ".zlogin" ".zhistory" ".zcompdump-Christian’s MacBook Pro-5.0.5" ".zcompdump-Christian’s MacBook Pro-5.0.2" ".zcompdump-Christian’s MacBook Pro (6)-5.0.5" ".zcompdump-Christian’s MacBook Pro (5)-5.0.5" ".zcompdump-Christian’s MacBook Pro (4)-5.0.5" ".zcompdump-Christian’s MacBook Pro (3)-5.0.5" ".zcompdump-Christian’s MacBook Pro (2)-5.0.5" ".zcompdump" ".zcompcache/" ".WebStorm9/" ".vimrc_backup" ".vimrc" ".viminfo" ".vim/" ".vagrant.d/" ".Trash/" ".subversion/" ".ssh/" ".rnd" ".rbenv/" ".nvimrc" ".nvimlog" ".nviminfo" ".nvim/" ".npm/" ".node-gyp/" ".mitmproxy/" ".m2/" ".local/" ".lein/" ".irb-history" ".histfile" ".gvimrc" ".gitconfig" ".gem/" ".emacs.d/" ".DS_Store" ".cups/" ".config/" ".codeintel/" ".CFUserTextEncoding" ".cache/" ".bashrc" ".bash_profile" ".bash_history" ".atom/" ".android/" "../" "./")
+=======
+ ("/Users/csandvoss/Code/pattern-lib/components/headlineBox/" (21624 23011 0 0) "headlineBox.less" "headlineBox.jsx" "demo.jsx" "../" "./")
+
+ ("/Users/csandvoss/Code/pattern-lib/components/" (21620 31393 0 0) "teaserBox/" "plus/" "headlineBox/" ".DS_Store" "../" "./")
+
+ ("/Users/csandvoss/Code/pattern-lib/" (21624 17845 0 0) "webpack.config.js" "server.js" "pattern.jsx" "package.json" "node_modules/" "index.html" "components/" "bundle.js" ".DS_Store" "../" "./")
+>>>>>>> cdbf78ab6a99e61ddeb7aa6257d2b9ba78247ebb
 
  ("/Users/christian/.emacs.d/customizations/" (21672 26098 0 0) "ui.el" "themes.el" "shell-integration.el" "setup-js.el" "setup-clojure.el" "navigation.el" "misc.el" "elisp-editing.el" "editing.el" "../" "./")
 
