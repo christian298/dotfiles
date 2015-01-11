@@ -36,3 +36,11 @@
 
 ;; projectile everywhere!
 (projectile-global-mode)
+
+;; Enable VIM Emulation
+(require 'evil)
+(evil-mode 1)
+
+;; Map left alt-Key with META and right with alt
+(setq mac-option-key-is-meta t)
+(setq mac-right-option-modifier nil)
