@@ -21,7 +21,6 @@ Plugin 'hail2u/vim-css3-syntax'
 Plugin 'nanotech/jellybeans.vim'
 Plugin 'chriskempson/base16-vim'
 Plugin 'groenewege/vim-less'
-Plugin 'digitaltoad/vim-jade'
 Plugin 'Raimondi/delimitMate'
 Plugin 'tpope/vim-fireplace'
 Plugin 'guns/vim-clojure-static'
@@ -108,6 +107,7 @@ set incsearch
 
 " Highlight matching {}()[]
 set showmatch
+set matchtime=3
 
 " Redraw screen only when needed
 set lazyredraw
