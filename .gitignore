@@ -9,3 +9,6 @@
 .emacs.d/.smex-items
 .emacs.d/places
 .emacs.d/ido.last
+.emacs.d/.DS_Store
+.emacs.d/ac-comphist.dat
+.DS_Store
