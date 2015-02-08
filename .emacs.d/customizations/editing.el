@@ -34,8 +34,10 @@
 (smex-initialize)
 (global-set-key (kbd "M-x") 'smex)
 
-;; projectile everywhere!
+;; projectile 
 (projectile-global-mode)
+;;(require 'helm-projectile)
+;;(helm-projectile-on)
 
 ;; Enable VIM Emulation
 (require 'evil)
@@ -44,3 +46,8 @@
 ;; Map left alt-Key with META and right with alt
 (setq mac-option-key-is-meta t)
 (setq mac-right-option-modifier nil)
+
+;; Helm
+(setq helm-command-prefix-key "C-c h") 
+(require 'helm-config)
+(helm-mode 1)
