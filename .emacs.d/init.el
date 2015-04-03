@@ -36,6 +36,7 @@
     json-mode
     auto-complete
     less-css-mode
+    sass-mode
     ))
 
 ;; Get latest versions of all packages

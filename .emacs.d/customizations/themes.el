@@ -2,4 +2,4 @@
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
 (add-to-list 'load-path "~/.emacs.d/themes")
 
-(load-theme 'monokai t)
+(load-theme 'solarized-dark t)

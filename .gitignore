@@ -12,4 +12,5 @@
 .emacs.d/.DS_Store
 .emacs.d/ac-comphist.dat
 .emacs.d/projectile.cache
+.emacs.d/recentf
 .DS_Store

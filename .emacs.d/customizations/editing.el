@@ -1,6 +1,9 @@
 ;; Highlights matching parenthesis
 (show-paren-mode 1)
 
+;; Reload file when changed
+(global-auto-revert-mode t)
+
 ;; Highlight current line
 (global-hl-line-mode 1)
 
@@ -34,20 +37,36 @@
 (smex-initialize)
 (global-set-key (kbd "M-x") 'smex)
 
-;; projectile 
+;; projectile
 (projectile-global-mode)
 ;;(require 'helm-projectile)
 ;;(helm-projectile-on)
 
 ;; Enable VIM Emulation
-(require 'evil)
-(evil-mode 1)
+;;(require 'evil)
+;;(evil-mode 1)
 
 ;; Map left alt-Key with META and right with alt
 (setq mac-option-key-is-meta t)
 (setq mac-right-option-modifier nil)
 
 ;; Helm
-(setq helm-command-prefix-key "C-c h") 
+(setq helm-command-prefix-key "C-c h")
 (require 'helm-config)
 (helm-mode 1)
+
+;; use Shift+arrow_keys to move cursor around split panes
+(windmove-default-keybindings)
+
+;; when cursor is on edge, move to the other side, as in a toroidal space
+(setq windmove-wrap-around t )
+
+;; Kebindings
+(global-set-key "\M-l" '(lambda () (interactive) (insert "@")))
+(global-set-key "\M-5" '(lambda () (interactive) (insert "[")))
+(global-set-key "\M-6" '(lambda () (interactive) (insert "]")))
+(global-set-key "\M-7" '(lambda () (interactive) (insert "|")))
+(global-set-key "\M-/" '(lambda () (interactive) (insert "\\")))
+(global-set-key "\M-8" '(lambda () (interactive) (insert "{")))
+(global-set-key "\M-9" '(lambda () (interactive) (insert "}")))
+(global-set-key "\M-n" '(lambda () (interactive) (insert "~")))
