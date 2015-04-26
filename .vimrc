@@ -20,6 +20,7 @@ Plugin 'cakebaker/scss-syntax.vim'
 Plugin 'hail2u/vim-css3-syntax'
 Plugin 'nanotech/jellybeans.vim'
 Plugin 'chriskempson/base16-vim'
+Plugin 'altercation/vim-colors-solarized'
 Plugin 'groenewege/vim-less'
 Plugin 'Raimondi/delimitMate'
 Plugin 'tpope/vim-fireplace'
@@ -40,13 +41,18 @@ endif
 
 "colorscheme hybrid
 "colorscheme jellybeans
-colorscheme base16-tomorrow
+"colorscheme base16-tomorrow
 "let g:jellybeans_use_lowcolor_black = 0
+
+"let g:solarized_termcolors=256
+colorscheme solarized
+
 
 :highlight LineNr guifg=DarkGrey
 
 " Completion
 set omnifunc=syntaxcomplete#Complete
+set omnifunc=javascriptcomplete#CompleteJS
 :highlight Pmenu ctermbg=238 gui=bold
 filetype on
 filetype plugin on
