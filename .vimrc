@@ -27,6 +27,7 @@ Plugin 'tpope/vim-fireplace'
 Plugin 'guns/vim-clojure-static'
 Plugin 'kien/rainbow_parentheses.vim'
 Plugin 'guns/vim-clojure-highlight'
+Plugin 'junegunn/seoul256.vim'
 
 call vundle#end()
 
@@ -45,7 +46,9 @@ endif
 "let g:jellybeans_use_lowcolor_black = 0
 
 "let g:solarized_termcolors=256
-colorscheme solarized
+"colorscheme solarized
+let g:seoul256_background = 234
+colo seoul256
 
 
 :highlight LineNr guifg=DarkGrey
