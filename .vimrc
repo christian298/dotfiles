@@ -1,13 +1,18 @@
 set nocompatible
 
+set encoding=utf-8
+scriptencoding utf-8
+
 " Enable filetype plugins
 filetype off
+
+set modifiable
 
 set rtp+=~/.nvim/bundle/Vundle.vim
 call vundle#begin()
 
 Plugin 'ctrlp.vim'
-Plugin 'bling/vim-airline'
+"Plugin 'bling/vim-airline'
 Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
 Plugin 'jelera/vim-javascript-syntax'
@@ -27,6 +32,8 @@ Plugin 'guns/vim-clojure-static'
 Plugin 'kien/rainbow_parentheses.vim'
 Plugin 'guns/vim-clojure-highlight'
 Plugin 'junegunn/seoul256.vim'
+Plugin 'scrooloose/nerdtree'
+
 
 call vundle#end()
 
@@ -84,8 +91,6 @@ set ruler
 set splitbelow
 set splitright
 
-set encoding=utf-8
-
 " using Source Code Pro
 set guifont=Source\ Code\ Pro\ for\ Powerline
 
@@ -103,7 +108,7 @@ set softtabstop=4
 set shiftwidth=4
 set expandtab "Convert TABs into Spaces
 
-let javascript_enable_domhtmlcss=1 
+let javascript_enable_domhtmlcss=1
 
 " Allways display status line
 set laststatus=2
@@ -153,3 +158,7 @@ au Syntax * RainbowParenthesesLoadBraces
 map j gj
 map k gk
 
+" NerdTree
+map <C-n> :NERDTreeToggle<CR>
+
+set nostartofline
