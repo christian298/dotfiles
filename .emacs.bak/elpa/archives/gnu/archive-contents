@@ -447,7 +447,11 @@
 	    ((:url . "http://elpa.gnu.org/packages/omn-mode.html")
 	     (:keywords))])
  (org .
+<<<<<<< HEAD
       [(20150525)
+=======
+      [(20150601)
+>>>>>>> acb741b2c1b24e016b5f05a912ebeb61c8fe42f8
        nil "Outline-based notes management and organizer" tar nil])
  (osc .
       [(0 1)

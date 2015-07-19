@@ -11,7 +11,6 @@ Plugin 'bling/vim-airline'
 Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
 Plugin 'jelera/vim-javascript-syntax'
-Plugin 'marijnh/tern_for_vim'
 Plugin 'moll/vim-node'
 Plugin 'othree/javascript-libraries-syntax.vim'
 Plugin 'othree/html5.vim'
@@ -41,14 +40,14 @@ if $TERM == "xterm-256color" || $TERM == "screen-256color" || $COLORTERM == "gno
 endif
 
 "colorscheme hybrid
-"colorscheme jellybeans
+colorscheme jellybeans
 "colorscheme base16-tomorrow
-"let g:jellybeans_use_lowcolor_black = 0
+let g:jellybeans_use_lowcolor_black = 0
 
 "let g:solarized_termcolors=256
 "colorscheme solarized
-let g:seoul256_background = 234
-colo seoul256
+"let g:seoul256_background = 234
+"colorscheme seoul256
 
 
 :highlight LineNr guifg=DarkGrey
@@ -91,7 +90,8 @@ set encoding=utf-8
 set guifont=Source\ Code\ Pro\ for\ Powerline
 
 " Airline Config
-let g:airline_powerline_fonts=1 
+let g:airline_powerline_fonts=1
+let g:airline_theme='powerlineish'
 
 set wildmenu
 set wildmode=list:longest,list:full

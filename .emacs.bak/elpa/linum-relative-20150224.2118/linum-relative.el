@@ -4,9 +4,15 @@
 ;;
 ;; Author: coldnew <coldnew.tw@gmail.com>
 ;; Keywords: converience
+<<<<<<< HEAD
 ;; X-URL: http://github.com/coldnew/linum-relative
 ;; Version: 20150224.2118
 ;; X-Original-Version: 0.4
+=======
+;; Package-Version: 20150224.2118
+;; X-URL: http://github.com/coldnew/linum-relative
+;; Version: 0.4
+>>>>>>> acb741b2c1b24e016b5f05a912ebeb61c8fe42f8
 
 ;; This file is not part of GNU Emacs.
 

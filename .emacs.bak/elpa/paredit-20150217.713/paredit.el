@@ -3,8 +3,13 @@
 ;; Copyright (C) 2005--2015 Taylor R. Campbell
 
 ;; Author: Taylor R. Campbell
+<<<<<<< HEAD
 ;; Version: 20150217.713
 ;; X-Original-Version: 25beta
+=======
+;; Version: 25beta
+;; Package-Version: 20150217.713
+>>>>>>> acb741b2c1b24e016b5f05a912ebeb61c8fe42f8
 ;; Created: 2005-07-31
 ;; Keywords: lisp
 

@@ -2,6 +2,7 @@
 
 ;; ----- ido-last-directory-list -----
 (
+<<<<<<< HEAD
  ("/Users/christian/Developer/Web/zstars/" . "dist/")
  ("/Users/christian/Developer/Web/parallax/components/" . "parallax/")
  ("/Users/christian/Development/clojure/clojure-noob/src/" . "clojure_noob/")
@@ -27,10 +28,15 @@
  ("/Users/christian/Development/Web/react-slider/" . "src/")
  ("/Users/christian/Development/Web/" . "WebAudio/")
  ("/Users/christian/Development/" . "clojure/")
+=======
+ ("/Users/csandvoss/svn-repo/cms/3_edit/2015/05-2015/lpo-8585/" . "js/")
+ ("/Users/csandvoss/svn-repo/cms/3_edit/2015/04-2015/lpo-8499/" . "js/")
+>>>>>>> acb741b2c1b24e016b5f05a912ebeb61c8fe42f8
 )
 
 ;; ----- ido-work-directory-list -----
 (
+<<<<<<< HEAD
  "/Users/christian/Developer/Web/zstars/dist/"
  "/Users/christian/Developer/Web/parallax/components/parallax/"
  "/Users/christian/Developer/Web/parallax/"
@@ -54,10 +60,18 @@
  "/Users/christian/Development/Web/react-slider/src/js/components/"
  "/Users/christian/Development/Web/react-slider/src/js/"
  "/Users/christian/Development/Web/WebAudio/"
+=======
+ "/Users/csandvoss/Developer/cms-old/js/lp/2014-30/"
+ "/Users/csandvoss/svn-repo/cms/3_edit/2015/05-2015/lpo-8585/js/"
+ "/Users/csandvoss/svn-repo/cms/3_edit/2015/05-2015/lpo-8585/"
+ "/Users/csandvoss/svn-repo/cms/3_edit/2015/04-2015/lpo-8499/js/"
+ "/Users/csandvoss/svn-repo/cms/3_edit/2015/04-2015/lpo-8499/"
+>>>>>>> acb741b2c1b24e016b5f05a912ebeb61c8fe42f8
 )
 
 ;; ----- ido-work-file-list -----
 (
+<<<<<<< HEAD
  "zstars.js"
  "parallax.jsx"
  "parallax.scss"
@@ -68,10 +82,19 @@
  "editing.el"
  "config-web.el"
  "style.scss"
+=======
+ "lpo-6413-V2.js"
+ "tab-navigation.js"
+ "lpo-8585.js"
+ "lpo-8585.css"
+ "lpo-8499.js"
+ "gulpfile.js"
+>>>>>>> acb741b2c1b24e016b5f05a912ebeb61c8fe42f8
 )
 
 ;; ----- ido-dir-file-cache -----
 (
+<<<<<<< HEAD
  ("/Users/christian/Developer/Web/zstars/dist/" (21842 22237 0 0) "zstars.js" "zstars.css.map" "zstars.css" "onepagescroll.min.js" "onepage-scroll.css" "../" "./")
 
  ("/Users/christian/Developer/Web/" (21845 2244 0 0) "zstars.zip" "zstars/" "zal-api-test/" "z-stars/" "timer/" "susy-test/" "snap-scroll/" "postcss-test/" "parallax/" "hello-cljs/" "grid_timer.zip" "grid/" "canvas/" ".DS_Store" "../" "./")
@@ -161,6 +184,17 @@
  ("/Users/christian/Development/Web/WebAudio/" (21183 4512 0 0) "WebAudio.iml" "style.scss" "style.css" "index.html" "audio.js" ".idea/" "../" "./")
 
  ("/Users/christian/Development/Web/" (21644 28281 0 0) "zal-components/" "zal/" "webpack-test/" "webgl/" "WebAudio/" "training-test/" "susy_playgound/" "reim/" "react-slider/" "react-playground/" "perf/" "ImageCompare/" "App/" ".DS_Store" "../" "./")
+=======
+ ("/Users/csandvoss/Developer/cms-old/js/lp/2014-30/" (21872 4866 0 0) "slick_fix.js" "lpo-6991-modules-template-medium-v3.js" "lpo-6975.js" "lpo-6889.js" "lpo-6889-5.js" "lpo-6889-1.js" "lpo-6887-lp.js" "lpo-6885-video.js" "lpo-6885-lp-1.js" "lpo-6550.js" "lpo-6413.js" "lpo-6413-V2.js" "lpo-6413-detail.js" "lpo-6413-appDETAIL.js" "lpo-6413-app.js" "../" "./")
+
+ ("/Users/csandvoss/svn-repo/cms/3_edit/2015/05-2015/lpo-8585/js/" (21842 4923 0 0) "tab-navigation.js" "lpo-8585.js" "../" "./")
+
+ ("/Users/csandvoss/svn-repo/cms/3_edit/2015/05-2015/lpo-8585/" (21842 4699 0 0) "webpack.config.js" "package.json" "node_modules/" "lpo-8585.css" "js/" "gulpfile.js" "dist/" "../" "./")
+
+ ("/Users/csandvoss/svn-repo/cms/3_edit/2015/04-2015/lpo-8499/" (21840 21573 0 0) "webpack.config.js" "scss/" "package.json" "node_modules/" "js/" "gulpfile.js" "dist/" ".DS_Store" "../" "./")
+
+ ("/Users/csandvoss/svn-repo/cms/3_edit/2015/04-2015/lpo-8499/js/" (21840 21441 0 0) "lpo-8499.js" "ContentSwitch.js" "../" "./")
+>>>>>>> acb741b2c1b24e016b5f05a912ebeb61c8fe42f8
 )
 
 ;; ----- ido-unc-hosts-cache -----
