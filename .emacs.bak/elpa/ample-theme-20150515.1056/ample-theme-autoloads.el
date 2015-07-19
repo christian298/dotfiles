@@ -3,8 +3,13 @@
 ;;; Code:
 (add-to-list 'load-path (or (file-name-directory #$) (car load-path)))
 
+<<<<<<< HEAD
+;;;### (autoloads nil "ample-flat-theme" "ample-flat-theme.el" (21863
+;;;;;;  27398 0 0))
+=======
 ;;;### (autoloads nil "ample-flat-theme" "ample-flat-theme.el" (21873
 ;;;;;;  17964 0 0))
+>>>>>>> acb741b2c1b24e016b5f05a912ebeb61c8fe42f8
 ;;; Generated autoloads from ample-flat-theme.el
 
 (when load-file-name (add-to-list 'custom-theme-load-path (file-name-as-directory (file-name-directory load-file-name))))
@@ -17,7 +22,11 @@ Apply the ample-flat-theme.
 ;;;***
 
 ;;;### (autoloads nil "ample-light-theme" "ample-light-theme.el"
+<<<<<<< HEAD
+;;;;;;  (21863 27398 0 0))
+=======
 ;;;;;;  (21873 17964 0 0))
+>>>>>>> acb741b2c1b24e016b5f05a912ebeb61c8fe42f8
 ;;; Generated autoloads from ample-light-theme.el
 
 (when load-file-name (add-to-list 'custom-theme-load-path (file-name-as-directory (file-name-directory load-file-name))))
@@ -29,7 +38,11 @@ Apply the ample-light-theme.
 
 ;;;***
 
+<<<<<<< HEAD
+;;;### (autoloads nil "ample-theme" "ample-theme.el" (21863 27398
+=======
 ;;;### (autoloads nil "ample-theme" "ample-theme.el" (21873 17964
+>>>>>>> acb741b2c1b24e016b5f05a912ebeb61c8fe42f8
 ;;;;;;  0 0))
 ;;; Generated autoloads from ample-theme.el
 
@@ -42,7 +55,11 @@ Apply the ample-theme.
 
 ;;;***
 
+<<<<<<< HEAD
+;;;### (autoloads nil nil ("ample-theme-pkg.el") (21863 27398 446943
+=======
 ;;;### (autoloads nil nil ("ample-theme-pkg.el") (21873 17964 468385
+>>>>>>> acb741b2c1b24e016b5f05a912ebeb61c8fe42f8
 ;;;;;;  0))
 
 ;;;***

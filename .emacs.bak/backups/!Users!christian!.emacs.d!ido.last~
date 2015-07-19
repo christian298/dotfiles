@@ -1,0 +1,54 @@
+;;; -*- coding: utf-8 -*-
+
+;; ----- ido-last-directory-list -----
+(
+ ("/Users/christian/Development/Web/react-slider/src/js/" . "components/")
+ ("/Users/christian/Development/Web/react-slider/src/" . "js/")
+ ("/Users/christian/Development/Web/react-slider/" . "src/")
+ ("/Users/christian/Development/Web/" . "WebAudio/")
+ ("/Users/christian/Development/" . "Web/")
+)
+
+;; ----- ido-work-directory-list -----
+(
+ "/Users/christian/dotfiles/.emacs.d/"
+ "/Users/christian/Development/Web/react-slider/src/js/components/"
+ "/Users/christian/Development/Web/react-slider/src/js/"
+ "/Users/christian/Development/Web/WebAudio/"
+)
+
+;; ----- ido-work-file-list -----
+(
+ "init.el"
+ "slider.jsx"
+ "app.jsx"
+ "audio.js"
+)
+
+;; ----- ido-dir-file-cache -----
+(
+ ("/Users/christian/dotfiles/.emacs.d/" (21691 57958 0 0) "themes/" "projectile-bookmarks.eld" "places" "init.el" "ido.last" "elpa/" "customizations/" "backups/" "auto-save-list/" ".smex-items" ".DS_Store" "../" "./")
+
+ ("/Users/christian/dotfiles/.emacs.d/customizations/" (21682 51011 0 0) "ui.el" "themes.el" "editing.el" "config-web.el" "config-clojure.el" "../" "./")
+
+ ("/Users/christian/Development/Web/react-slider/src/js/components/" (21666 56587 0 0) "slider.jsx" "slider-navi.jsx" "slider-item.jsx" "../" "./")
+
+ ("/Users/christian/Development/Web/react-slider/src/less/" (21666 56767 0 0) "slider.less" "../" "./")
+
+ ("/Users/christian/Development/Web/react-slider/src/js/" (21662 41278 0 0) "model/" "components/" "app.jsx" "../" "./")
+
+ ("/Users/christian/Development/Web/react-slider/src/" (21644 29183 0 0) "less/" "js/" "../" "./")
+
+ ("/Users/christian/Development/Web/react-slider/" (21668 13981 0 0) "webpack.config.js" "src/" "README.md" "package.json" "node_modules/" "index.html" "dist/" ".idea/" ".gitignore" ".git/" ".DS_Store" "../" "./")
+
+ ("/Users/christian/Development/Web/WebAudio/" (21183 4512 0 0) "WebAudio.iml" "style.scss" "style.css" "index.html" "audio.js" ".idea/" "../" "./")
+
+ ("/Users/christian/Development/Web/" (21644 28281 0 0) "zal-components/" "zal/" "webpack-test/" "webgl/" "WebAudio/" "training-test/" "susy_playgound/" "reim/" "react-slider/" "react-playground/" "perf/" "ImageCompare/" "App/" ".DS_Store" "../" "./")
+
+ ("/Users/christian/Development/" (21589 2125 0 0) "workspace/" "Web/" "test.scpt" "test.safariextension/" "swift/" "Ruby/" "rails_box/" "osx/" "nodejs/" "iOS/" "instr.trace/" "hero_medium_2x.jpg" "generator-zal/" "dart-sdk/" "clojure/" "christian298.github.io/" ".yo-rc.json" ".DS_Store" "../" "./")
+
+ ("/Users/christian/" (21681 18265 0 0) "VirtualBox VMs/" "tmp/" "Public/" "prompt_agnoster_setup" "Pictures/" "Music/" "Movies/" "Library/" "Downloads/" "dotfiles/" "Documents/" "Development/" "Desktop/" "cminstaller/" "Applications/" ".zshrc_bak" ".zshrc.omz-uninstalled-20141213153021" ".zshrc-e" ".zshrc" ".zshenv" ".zsh_history" ".zsh-update" ".zprofile" ".zpreztorc" ".zprezto/" ".zlogout" ".zlogin" ".zhistory" ".zcompdump-Christian’s MacBook Pro-5.0.5" ".zcompdump-Christian’s MacBook Pro-5.0.2" ".zcompdump-Christian’s MacBook Pro (6)-5.0.5" ".zcompdump-Christian’s MacBook Pro (5)-5.0.5" ".zcompdump-Christian’s MacBook Pro (4)-5.0.5" ".zcompdump-Christian’s MacBook Pro (3)-5.0.5" ".zcompdump-Christian’s MacBook Pro (2)-5.0.5" ".zcompdump" ".zcompcache/" ".WebStorm9/" ".vimrc_backup" ".vimrc" ".viminfo" ".vim/" ".vagrant.d/" ".Trash/" ".subversion/" ".ssh/" ".rnd" ".rbenv/" ".pip/" ".nvimrc" ".nvimlog" ".nviminfo" ".nvim/" ".npm/" ".node-gyp/" ".mitmproxy/" ".m2/" ".local/" ".lein/" ".irb-history" ".histfile" ".gvimrc" ".gitconfig" ".gem/" ".emacs.d/" ".DS_Store" ".cups/" ".config/" ".codeintel/" ".CFUserTextEncoding" ".cache/" ".bashrc" ".bash_profile" ".bash_history" ".atom/" ".android/" "../" "./")
+)
+
+;; ----- ido-unc-hosts-cache -----
+t
