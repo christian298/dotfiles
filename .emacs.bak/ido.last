@@ -1,0 +1,42 @@
+;;; -*- coding: utf-8 -*-
+
+;; ----- ido-last-directory-list -----
+(
+ ("/Users/csandvoss/svn-repo/cms/3_edit/2015/05-2015/lpo-8585/" . "js/")
+ ("/Users/csandvoss/svn-repo/cms/3_edit/2015/04-2015/lpo-8499/" . "js/")
+)
+
+;; ----- ido-work-directory-list -----
+(
+ "/Users/csandvoss/Developer/cms-old/js/lp/2014-30/"
+ "/Users/csandvoss/svn-repo/cms/3_edit/2015/05-2015/lpo-8585/js/"
+ "/Users/csandvoss/svn-repo/cms/3_edit/2015/05-2015/lpo-8585/"
+ "/Users/csandvoss/svn-repo/cms/3_edit/2015/04-2015/lpo-8499/js/"
+ "/Users/csandvoss/svn-repo/cms/3_edit/2015/04-2015/lpo-8499/"
+)
+
+;; ----- ido-work-file-list -----
+(
+ "lpo-6413-V2.js"
+ "tab-navigation.js"
+ "lpo-8585.js"
+ "lpo-8585.css"
+ "lpo-8499.js"
+ "gulpfile.js"
+)
+
+;; ----- ido-dir-file-cache -----
+(
+ ("/Users/csandvoss/Developer/cms-old/js/lp/2014-30/" (21872 4866 0 0) "slick_fix.js" "lpo-6991-modules-template-medium-v3.js" "lpo-6975.js" "lpo-6889.js" "lpo-6889-5.js" "lpo-6889-1.js" "lpo-6887-lp.js" "lpo-6885-video.js" "lpo-6885-lp-1.js" "lpo-6550.js" "lpo-6413.js" "lpo-6413-V2.js" "lpo-6413-detail.js" "lpo-6413-appDETAIL.js" "lpo-6413-app.js" "../" "./")
+
+ ("/Users/csandvoss/svn-repo/cms/3_edit/2015/05-2015/lpo-8585/js/" (21842 4923 0 0) "tab-navigation.js" "lpo-8585.js" "../" "./")
+
+ ("/Users/csandvoss/svn-repo/cms/3_edit/2015/05-2015/lpo-8585/" (21842 4699 0 0) "webpack.config.js" "package.json" "node_modules/" "lpo-8585.css" "js/" "gulpfile.js" "dist/" "../" "./")
+
+ ("/Users/csandvoss/svn-repo/cms/3_edit/2015/04-2015/lpo-8499/" (21840 21573 0 0) "webpack.config.js" "scss/" "package.json" "node_modules/" "js/" "gulpfile.js" "dist/" ".DS_Store" "../" "./")
+
+ ("/Users/csandvoss/svn-repo/cms/3_edit/2015/04-2015/lpo-8499/js/" (21840 21441 0 0) "lpo-8499.js" "ContentSwitch.js" "../" "./")
+)
+
+;; ----- ido-unc-hosts-cache -----
+t

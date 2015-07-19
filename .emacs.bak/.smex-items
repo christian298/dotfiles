@@ -1,0 +1,19 @@
+
+;; ----- smex-history -----
+(
+ package-list-packages
+ js2-minor-mode
+ helm-find-files
+ js2-mode
+ cd
+ 5x5
+ arp
+)
+
+;; ----- smex-data -----
+(
+ (js2-mode . 2)
+ (helm-find-files . 26)
+ (js2-minor-mode . 2)
+ (package-list-packages . 3)
+)
