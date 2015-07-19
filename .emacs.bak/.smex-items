@@ -1,0 +1,29 @@
+
+;; ----- smex-history -----
+(
+ js2-mode
+ web-mode
+ sass-mode
+ helm-find-files
+ package-list-packages
+ load-theme
+ cider-connect
+)
+
+;; ----- smex-data -----
+(
+ (load-theme . 36)
+ (js2-mode . 8)
+ (web-mode . 9)
+ (css-mode . 4)
+ (rainbow-delimiters-mode . 4)
+ (skewer-css-mode . 2)
+ (js2-minor-mode . 14)
+ (package-list-packages . 13)
+ (helm-find-files . 15)
+ (helm-M-x . 3)
+ (goto-char . 1)
+ (sass-mode . 4)
+ (cider-jack-in . 1)
+ (cider-connect . 1)
+)

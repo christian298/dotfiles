@@ -1,0 +1,1 @@
+("~/dotfiles/" "~/Developer/Web/parallax/" "~/Development/clojure/clojure-noob/" "~/Developer/Web/zal-api-test/" "/Volumes/Untitled/lpo/8405/" "~/Developer/Web/cljs-test/" "/usr/local/" "~/Developer/Web/susy-test/" "~/Development/Web/react-server/" "~/.zprezto/" "~/Development/Web/react-slider/")
