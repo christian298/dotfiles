@@ -1,5 +1,35 @@
-set nocompatible
+call plug#begin('~/.vim/plugged')
 
+Plug 'bling/vim-airline'
+Plug 'pangloss/vim-javascript'
+Plug 'mxw/vim-jsx'
+Plug 'jelera/vim-javascript-syntax'
+Plug 'moll/vim-node'
+Plug 'othree/javascript-libraries-syntax.vim'
+Plug 'othree/html5.vim'
+Plug 'mattn/emmet-vim'
+Plug 'cakebaker/scss-syntax.vim'
+Plug 'hail2u/vim-css3-syntax'
+Plug 'nanotech/jellybeans.vim'
+Plug 'Raimondi/delimitMate'
+Plug 'guns/vim-clojure-static'
+Plug 'junegunn/rainbow_parentheses.vim'
+Plug 'guns/vim-clojure-highlight'
+Plug 'junegunn/seoul256.vim'
+Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+Plug 'Shougo/deoplete.nvim'
+Plug 'lambdatoast/elm.vim'
+Plug 'chriskempson/tomorrow-theme', {'rtp': 'vim'}
+Plug 'apple/swift', {'rtp': 'utils/vim'}
+Plug 'fatih/vim-go'
+
+" Add plugins to &runtimepath
+call plug#end()
+
+set nocompatible
 set encoding=utf-8
 scriptencoding utf-8
 
@@ -7,35 +37,6 @@ scriptencoding utf-8
 filetype off
 
 set modifiable
-
-set rtp+=~/.nvim/bundle/Vundle.vim
-call vundle#begin()
-
-Plugin 'ctrlp.vim'
-"Plugin 'bling/vim-airline'
-Plugin 'pangloss/vim-javascript'
-Plugin 'mxw/vim-jsx'
-Plugin 'jelera/vim-javascript-syntax'
-Plugin 'moll/vim-node'
-Plugin 'othree/javascript-libraries-syntax.vim'
-Plugin 'othree/html5.vim'
-Plugin 'mattn/emmet-vim'
-Plugin 'cakebaker/scss-syntax.vim'
-Plugin 'hail2u/vim-css3-syntax'
-Plugin 'nanotech/jellybeans.vim'
-Plugin 'chriskempson/base16-vim'
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'groenewege/vim-less'
-Plugin 'Raimondi/delimitMate'
-Plugin 'tpope/vim-fireplace'
-Plugin 'guns/vim-clojure-static'
-Plugin 'kien/rainbow_parentheses.vim'
-Plugin 'guns/vim-clojure-highlight'
-Plugin 'junegunn/seoul256.vim'
-Plugin 'scrooloose/nerdtree'
-
-
-call vundle#end()
 
 syntax enable
 
@@ -46,16 +47,12 @@ if $TERM == "xterm-256color" || $TERM == "screen-256color" || $COLORTERM == "gno
   set t_Co=256
 endif
 
-"colorscheme hybrid
-colorscheme jellybeans
-"colorscheme base16-tomorrow
-let g:jellybeans_use_lowcolor_black = 0
+"colorscheme jellybeans
+"let g:jellybeans_use_lowcolor_black = 0
 
-"let g:solarized_termcolors=256
-"colorscheme solarized
-"let g:seoul256_background = 234
-"colorscheme seoul256
-
+"let g:seoul256_background = 233
+"colo seoul256
+colo tomorrow-night-bright
 
 :highlight LineNr guifg=DarkGrey
 
@@ -113,8 +110,6 @@ let javascript_enable_domhtmlcss=1
 " Allways display status line
 set laststatus=2
 
-set clipboard=unnamed
-
 " Search
 set nohls
 set incsearch
@@ -133,7 +128,7 @@ let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
 " Clipboard
 set clipboard=unnamed
 
-" Netre
+" Newtree
 let g:netrw_liststyle=3
 
 " Set text width
@@ -146,13 +141,12 @@ set colorcolumn=+1
 set sc
 
 " Rainbow Parenthese
-au VimEnter * RainbowParenthesesToggle
-au Syntax * RainbowParenthesesLoadRound
-au Syntax * RainbowParenthesesLoadSquare
-au Syntax * RainbowParenthesesLoadBraces
+au VimEnter * RainbowParentheses
+let g:rainbow#max_level = 16
+let g:rainbow#pairs = [['(', ')'], ['[', ']']]
 
 " Remap leader
-:let mapleader ="ä"
+:let mapleader =" "
 
 " Treat long lines as break lines (useful when moving around in them)
 map j gj
@@ -162,3 +156,16 @@ map k gk
 map <C-n> :NERDTreeToggle<CR>
 
 set nostartofline
+
+" Use deoplete.
+let g:deoplete#enable_at_startup = 1
+
+" FZF
+if has('nvim')
+  let $FZF_DEFAULT_OPTS .= ' --inline-info'
+endif
+
+nnoremap <silent> <Leader><Leader> :Files<CR>
+nnoremap <silent> <Leader><Enter>  :Buffers<CR>
+imap <c-x><c-j> <plug>(fzf-complete-file-ag)
+map <C-p> :File<CR>
