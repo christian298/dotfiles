@@ -23,6 +23,8 @@ Plug 'junegunn/fzf.vim'
 Plug 'Shougo/deoplete.nvim'
 Plug 'lambdatoast/elm.vim'
 Plug 'chriskempson/tomorrow-theme', {'rtp': 'vim'}
+Plug 'w0ng/vim-hybrid'
+Plug 'mhartington/oceanic-next'
 Plug 'apple/swift', {'rtp': 'utils/vim'}
 Plug 'fatih/vim-go'
 
@@ -47,14 +49,14 @@ if $TERM == "xterm-256color" || $TERM == "screen-256color" || $COLORTERM == "gno
   set t_Co=256
 endif
 
-"colorscheme jellybeans
-"let g:jellybeans_use_lowcolor_black = 0
-
 "let g:seoul256_background = 233
 "colo seoul256
-colo tomorrow-night-bright
+"colo tomorrow-night-bright
+let g:hybrid_custom_term_colors = 0
+colo hybrid
+"colorscheme OceanicNext
 
-:highlight LineNr guifg=DarkGrey
+ :highlight LineNr guifg=DarkGrey
 
 " Completion
 set omnifunc=syntaxcomplete#Complete
