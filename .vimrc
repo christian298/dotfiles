@@ -1,9 +1,11 @@
 call plug#begin('~/.vim/plugged')
 
 Plug 'bling/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
 Plug 'jelera/vim-javascript-syntax'
+Plug 'othree/yajs.vim'
 Plug 'moll/vim-node'
 Plug 'othree/javascript-libraries-syntax.vim'
 Plug 'othree/html5.vim'
@@ -24,6 +26,7 @@ Plug 'Shougo/deoplete.nvim'
 Plug 'lambdatoast/elm.vim'
 Plug 'chriskempson/tomorrow-theme', {'rtp': 'vim'}
 Plug 'w0ng/vim-hybrid'
+Plug 'zenorocha/dracula-theme', {'rtp': 'vim'} 
 Plug 'mhartington/oceanic-next'
 Plug 'apple/swift', {'rtp': 'utils/vim'}
 Plug 'fatih/vim-go'
@@ -52,11 +55,11 @@ endif
 "let g:seoul256_background = 233
 "colo seoul256
 "colo tomorrow-night-bright
-let g:hybrid_custom_term_colors = 0
-colo hybrid
-"colorscheme OceanicNext
+let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+"let g:hybrid_custom_term_colors = 0
+colo oceanicnext
 
- :highlight LineNr guifg=DarkGrey
+:highlight LineNr guifg=DarkGrey
 
 " Completion
 set omnifunc=syntaxcomplete#Complete
@@ -95,7 +98,8 @@ set guifont=Source\ Code\ Pro\ for\ Powerline
 
 " Airline Config
 let g:airline_powerline_fonts=1
-let g:airline_theme='powerlineish'
+"let g:airline_theme='powerlineish'
+let g:airline_theme='oceanicnext'
 
 set wildmenu
 set wildmode=list:longest,list:full
