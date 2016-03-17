@@ -52,8 +52,6 @@ if $TERM == "xterm-256color" || $TERM == "screen-256color" || $COLORTERM == "gno
   set t_Co=256
 endif
 
-"let g:seoul256_background = 233
-"colo seoul256
 "colo tomorrow-night-bright
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 "let g:hybrid_custom_term_colors = 0
@@ -113,6 +111,8 @@ set expandtab "Convert TABs into Spaces
 
 let javascript_enable_domhtmlcss=1
 
+let g:jsx_ext_required = 0
+
 " Allways display status line
 set laststatus=2
 
@@ -151,16 +151,6 @@ au VimEnter * RainbowParentheses
 let g:rainbow#max_level = 16
 let g:rainbow#pairs = [['(', ')'], ['[', ']']]
 
-" Remap leader
-:let mapleader =" "
-
-" Treat long lines as break lines (useful when moving around in them)
-map j gj
-map k gk
-
-" NerdTree
-map <C-n> :NERDTreeToggle<CR>
-
 set nostartofline
 
 " Use deoplete.
@@ -171,7 +161,28 @@ if has('nvim')
   let $FZF_DEFAULT_OPTS .= ' --inline-info'
 endif
 
+" #########
+" Remap
+" #########
+
+" Remap leader
+:let mapleader =" "
+
 nnoremap <silent> <Leader><Leader> :Files<CR>
 nnoremap <silent> <Leader><Enter>  :Buffers<CR>
 imap <c-x><c-j> <plug>(fzf-complete-file-ag)
 map <C-p> :File<CR>
+
+
+" NerdTree
+map <C-n> :NERDTreeToggle<CR>
+
+" Treat long lines as break lines (useful when moving around in them)
+map j gj
+map k gk
+
+"Split navigation
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
