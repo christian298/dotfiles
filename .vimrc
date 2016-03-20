@@ -15,9 +15,8 @@ Plug 'hail2u/vim-css3-syntax'
 Plug 'nanotech/jellybeans.vim'
 Plug 'Raimondi/delimitMate'
 Plug 'guns/vim-clojure-static'
-Plug 'junegunn/rainbow_parentheses.vim'
+Plug 'luochen1990/rainbow'
 Plug 'guns/vim-clojure-highlight'
-Plug 'junegunn/seoul256.vim'
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
@@ -26,7 +25,8 @@ Plug 'Shougo/deoplete.nvim'
 Plug 'lambdatoast/elm.vim'
 Plug 'chriskempson/tomorrow-theme', {'rtp': 'vim'}
 Plug 'w0ng/vim-hybrid'
-Plug 'zenorocha/dracula-theme', {'rtp': 'vim'} 
+Plug 'zenorocha/dracula-theme', {'rtp': 'vim'}
+Plug 'morhetz/gruvbox'
 Plug 'mhartington/oceanic-next'
 Plug 'apple/swift', {'rtp': 'utils/vim'}
 Plug 'fatih/vim-go'
@@ -52,10 +52,14 @@ if $TERM == "xterm-256color" || $TERM == "screen-256color" || $COLORTERM == "gno
   set t_Co=256
 endif
 
-"colo tomorrow-night-bright
+" NVIM true color 
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+
+"colo tomorrow-night-bright
 "let g:hybrid_custom_term_colors = 0
-colo oceanicnext
+let g:gruvbox_contrast_dark='hard'
+let g:gruvbox_contrast_light='hard'
+colo gruvbox
 
 :highlight LineNr guifg=DarkGrey
 
@@ -97,7 +101,7 @@ set guifont=Source\ Code\ Pro\ for\ Powerline
 " Airline Config
 let g:airline_powerline_fonts=1
 "let g:airline_theme='powerlineish'
-let g:airline_theme='oceanicnext'
+let g:airline_theme='gruvbox'
 
 set wildmenu
 set wildmode=list:longest,list:full
@@ -147,9 +151,7 @@ set colorcolumn=+1
 set sc
 
 " Rainbow Parenthese
-au VimEnter * RainbowParentheses
-let g:rainbow#max_level = 16
-let g:rainbow#pairs = [['(', ')'], ['[', ']']]
+let g:rainbow_active = 1
 
 set nostartofline
 
