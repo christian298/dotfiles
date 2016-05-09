@@ -22,12 +22,11 @@ Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'Shougo/deoplete.nvim'
-Plug 'lambdatoast/elm.vim'
+Plug 'elmcast/elm-vim'
 Plug 'chriskempson/tomorrow-theme', {'rtp': 'vim'}
 Plug 'w0ng/vim-hybrid'
 Plug 'zenorocha/dracula-theme', {'rtp': 'vim'}
 Plug 'morhetz/gruvbox'
-Plug 'mhartington/oceanic-next'
 Plug 'apple/swift', {'rtp': 'utils/vim'}
 Plug 'fatih/vim-go'
 
@@ -35,15 +34,22 @@ Plug 'fatih/vim-go'
 call plug#end()
 
 set nocompatible
-set encoding=utf-8
-scriptencoding utf-8
 
 " Enable filetype plugins
-filetype off
+filetype plugin on
+filetype indent on
 
+" Set to auto read when a file is changed from the outside
+set autoread
+
+" Make buffer modifiable
 set modifiable
 
+" Enable syntax highlighting
 syntax enable
+
+" Set utf8 as standard encoding
+set encoding=utf-8
 
 " Color scheme
 set background=dark
@@ -55,11 +61,9 @@ endif
 " NVIM true color 
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 
-"colo tomorrow-night-bright
-"let g:hybrid_custom_term_colors = 0
 let g:gruvbox_contrast_dark='hard'
 let g:gruvbox_contrast_light='hard'
-colo gruvbox
+colo gruvbox 
 
 :highlight LineNr guifg=DarkGrey
 
@@ -67,11 +71,11 @@ colo gruvbox
 set omnifunc=syntaxcomplete#Complete
 set omnifunc=javascriptcomplete#CompleteJS
 :highlight Pmenu ctermbg=238 gui=bold
-filetype on
-filetype plugin on
-filetype indent on
-au FileType html,xhtml setl ofu=htmlcomplete#CompleteTags
-au FileType css setl ofu=csscomplete#CompleteCSS
+
+" Enable omni completion.
+autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
 
 " Linenumbers
 set number
@@ -100,7 +104,6 @@ set guifont=Source\ Code\ Pro\ for\ Powerline
 
 " Airline Config
 let g:airline_powerline_fonts=1
-"let g:airline_theme='powerlineish'
 let g:airline_theme='gruvbox'
 
 set wildmenu
@@ -115,7 +118,7 @@ set expandtab "Convert TABs into Spaces
 
 let javascript_enable_domhtmlcss=1
 
-let g:jsx_ext_required = 0
+let g:jsx_ext_required = 1
 
 " Allways display status line
 set laststatus=2
@@ -130,10 +133,6 @@ set matchtime=3
 
 " Redraw screen only when needed
 set lazyredraw
-
-" CtrlP
-let g:ctrlp_working_path_mode=0
-let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
 
 " Clipboard
 set clipboard=unnamed
