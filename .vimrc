@@ -25,7 +25,7 @@ Plug 'Shougo/deoplete.nvim'
 Plug 'elmcast/elm-vim'
 Plug 'chriskempson/tomorrow-theme', {'rtp': 'vim'}
 Plug 'w0ng/vim-hybrid'
-Plug 'zenorocha/dracula-theme', {'rtp': 'vim'}
+Plug 'dracula/vim'
 Plug 'morhetz/gruvbox'
 Plug 'apple/swift', {'rtp': 'utils/vim'}
 Plug 'fatih/vim-go'
@@ -61,7 +61,7 @@ endif
 " NVIM true color 
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 
-let g:gruvbox_contrast_dark='hard'
+let g:gruvbox_contrast_dark='medium'
 let g:gruvbox_contrast_light='hard'
 colo gruvbox 
 
@@ -98,6 +98,12 @@ set ruler
 " Open splits on right and bottom
 set splitbelow
 set splitright
+
+" Set the vertical split character to +
+:set fillchars+=vert:\+
+
+" Set the vertical split character to  a space (there is a single space after '\ ')
+:set fillchars+=vert:\ 
 
 " using Source Code Pro
 set guifont=Source\ Code\ Pro\ for\ Powerline
@@ -177,6 +183,8 @@ map <C-p> :File<CR>
 
 " NerdTree
 map <C-n> :NERDTreeToggle<CR>
+let NERDTreeMinimalUI = 1
+let NERDTreeDirArrows = 1
 
 " Treat long lines as break lines (useful when moving around in them)
 map j gj
