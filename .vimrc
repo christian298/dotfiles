@@ -61,7 +61,7 @@ endif
 " NVIM true color 
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 
-let g:gruvbox_contrast_dark='medium'
+let g:gruvbox_contrast_dark='hard'
 let g:gruvbox_contrast_light='hard'
 colo gruvbox 
 
@@ -148,7 +148,7 @@ let g:netrw_liststyle=3
 
 " Set text width
 set wrap
-set textwidth=80
+"set textwidth=80
 set formatoptions=qrn1
 set colorcolumn=+1
 
@@ -156,12 +156,20 @@ set colorcolumn=+1
 set sc
 
 " Rainbow Parenthese
-let g:rainbow_active = 1
+let g:rainbow_active = 0
 
 set nostartofline
 
 " Use deoplete.
 let g:deoplete#enable_at_startup = 1
+
+" Let <Tab> also do completion
+inoremap <silent><expr> <Tab>
+\ pumvisible() ? "\<C-n>" :
+\ deoplete#mappings#manual_complete()
+
+" Close the documentation window when completion is done
+autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
 
 " FZF
 if has('nvim')
