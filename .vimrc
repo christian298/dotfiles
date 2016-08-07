@@ -61,10 +61,12 @@ endif
 " NVIM true color 
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 
-let g:gruvbox_contrast_dark='hard'
-let g:gruvbox_contrast_light='hard'
-colo gruvbox 
+let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
 
+"let g:gruvbox_contrast_dark='hard'
+"let g:gruvbox_contrast_light='hard'
+"colo gruvbox 
+colorscheme hybrid 
 :highlight LineNr guifg=DarkGrey
 
 " Completion
@@ -110,7 +112,7 @@ set guifont=Source\ Code\ Pro\ for\ Powerline
 
 " Airline Config
 let g:airline_powerline_fonts=1
-let g:airline_theme='gruvbox'
+let g:airline_theme='hybrid'
 
 set wildmenu
 set wildmode=list:longest,list:full
@@ -162,11 +164,6 @@ set nostartofline
 
 " Use deoplete.
 let g:deoplete#enable_at_startup = 1
-
-" Let <Tab> also do completion
-inoremap <silent><expr> <Tab>
-\ pumvisible() ? "\<C-n>" :
-\ deoplete#mappings#manual_complete()
 
 " Close the documentation window when completion is done
 autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
