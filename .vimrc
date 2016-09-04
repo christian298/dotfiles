@@ -27,6 +27,7 @@ Plug 'chriskempson/tomorrow-theme', {'rtp': 'vim'}
 Plug 'w0ng/vim-hybrid'
 Plug 'dracula/vim'
 Plug 'morhetz/gruvbox'
+Plug 'joshdick/onedark.vim'
 Plug 'apple/swift', {'rtp': 'utils/vim'}
 Plug 'fatih/vim-go'
 
@@ -59,14 +60,18 @@ if $TERM == "xterm-256color" || $TERM == "screen-256color" || $COLORTERM == "gno
 endif
 
 " NVIM true color 
-let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+set termguicolors
 
 let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
 
 "let g:gruvbox_contrast_dark='hard'
 "let g:gruvbox_contrast_light='hard'
 "colo gruvbox 
-colorscheme hybrid 
+
+let g:hybrid_custom_term_colors = 1
+let g:hybrid_reduced_contrast = 1
+colo hybrid
+
 :highlight LineNr guifg=DarkGrey
 
 " Completion
@@ -112,7 +117,7 @@ set guifont=Source\ Code\ Pro\ for\ Powerline
 
 " Airline Config
 let g:airline_powerline_fonts=1
-let g:airline_theme='hybrid'
+let g:airline_theme='gruvbox'
 
 set wildmenu
 set wildmode=list:longest,list:full
@@ -200,3 +205,7 @@ nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
+
+" Move visual block
+vnoremap J :m '>+1<CR>gv=gv
+vnoremap K :m '<-2<CR>gv=gv
