@@ -21,7 +21,7 @@ Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-Plug 'Shougo/deoplete.nvim'
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'elmcast/elm-vim'
 Plug 'chriskempson/tomorrow-theme', {'rtp': 'vim'}
 Plug 'w0ng/vim-hybrid'
@@ -30,6 +30,12 @@ Plug 'morhetz/gruvbox'
 Plug 'joshdick/onedark.vim'
 Plug 'apple/swift', {'rtp': 'utils/vim'}
 Plug 'fatih/vim-go'
+Plug 'isRuslan/vim-es6'
+Plug 'flowtype/vim-flow'
+Plug 'neomake/neomake'
+Plug 'elzr/vim-json'
+Plug 'marijnh/tern_for_vim', { 'do': 'npm install' }
+Plug 'jacoborus/tender'
 
 " Add plugins to &runtimepath
 call plug#end()
@@ -62,15 +68,15 @@ endif
 " NVIM true color 
 set termguicolors
 
-let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
+let g:gruvbox_contrast_dark='hard'
+let g:gruvbox_contrast_light='hard'
+let g:gruvbox_italic             = 1
+let g:gruvbox_italicize_comments = 1
+colo gruvbox 
 
-"let g:gruvbox_contrast_dark='hard'
-"let g:gruvbox_contrast_light='hard'
-"colo gruvbox 
-
-let g:hybrid_custom_term_colors = 1
-let g:hybrid_reduced_contrast = 1
-colo hybrid
+" let g:hybrid_custom_term_colors = 1
+" let g:hybrid_reduced_contrast = 1
+" colo hybrid
 
 :highlight LineNr guifg=DarkGrey
 
@@ -83,6 +89,13 @@ set omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
 autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+
+" tern
+if exists('g:plugs["tern_for_vim"]')
+  let g:tern_show_argument_hints = 'on_hold'
+  let g:tern_show_signature_in_pum = 1
+  autocmd FileType javascript setlocal omnifunc=tern#Complete
+endif
 
 " Linenumbers
 set number
@@ -113,7 +126,7 @@ set splitright
 :set fillchars+=vert:\ 
 
 " using Source Code Pro
-set guifont=Source\ Code\ Pro\ for\ Powerline
+" set guifont=Source\ Code\ Pro\ for\ Powerline
 
 " Airline Config
 let g:airline_powerline_fonts=1
@@ -129,9 +142,14 @@ set softtabstop=4
 set shiftwidth=4
 set expandtab "Convert TABs into Spaces
 
+" JS
 let javascript_enable_domhtmlcss=1
 
 let g:jsx_ext_required = 1
+
+let g:used_javascript_libs = 'react'
+
+let g:javascript_plugin_flow = 1
 
 " Allways display status line
 set laststatus=2
@@ -172,6 +190,20 @@ let g:deoplete#enable_at_startup = 1
 
 " Close the documentation window when completion is done
 autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
+
+" Neomake
+autocmd! BufWritePost,BufEnter * Neomake
+let g:neomake_javascript_enabled_makers =
+      \ executable('eslint') ? [ 'eslint' ] : []
+
+let g:neomake_jsx_enabled_makers = ['eslint']
+
+let s:local_maker_eslint = {
+      \   'ft':     'javascript',
+      \   'maker':  'eslint',
+      \   'local':  'node_modules/.bin/eslint',
+      \ }
+let g:neomake_open_list = 2
 
 " FZF
 if has('nvim')
