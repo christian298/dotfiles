@@ -1,17 +1,30 @@
 call plug#begin('~/.vim/plugged')
 
+Plug 'autozimu/LanguageClient-neovim', {
+    \ 'branch': 'next',
+    \ 'do': 'bash install.sh',
+    \ }
 Plug 'bling/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'pangloss/vim-javascript'
-Plug 'mxw/vim-jsx'
-Plug 'jelera/vim-javascript-syntax'
-Plug 'othree/yajs.vim'
-Plug 'moll/vim-node'
+Plug 'chemzqm/vim-jsx-improve'
+Plug 'othree/es.next.syntax.vim'
 Plug 'othree/javascript-libraries-syntax.vim'
+Plug 'othree/yajs.vim'
 Plug 'othree/html5.vim'
 Plug 'mattn/emmet-vim'
+Plug 'sbdchd/neoformat'
+Plug 'prettier/vim-prettier', {
+  \ 'do': 'npm install',
+  \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue'] }
+Plug 'sourcegraph/javascript-typescript-langserver'
+Plug 'vscode-langservers/vscode-css-languageserver-bin'
+
+" CSS
 Plug 'cakebaker/scss-syntax.vim'
 Plug 'hail2u/vim-css3-syntax'
+Plug 'othree/csscomplete.vim'
+Plug 'JulesWang/css.vim'
+
 Plug 'Raimondi/delimitMate'
 Plug 'guns/vim-clojure-static'
 Plug 'luochen1990/rainbow'
@@ -23,22 +36,19 @@ Plug 'junegunn/fzf.vim'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'elmcast/elm-vim'
 Plug 'apple/swift', {'rtp': 'utils/vim'}
-Plug 'mitsuse/autocomplete-swift'
 Plug 'fatih/vim-go'
-Plug 'isRuslan/vim-es6'
 Plug 'wokalski/autocomplete-flow'
 Plug 'flowtype/vim-flow'
 Plug 'w0rp/ale'
 Plug 'elzr/vim-json'
 Plug 'marijnh/tern_for_vim', { 'do': 'npm install' }
-Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
 Plug 'jacoborus/tender'
 Plug 'posva/vim-vue'
-Plug 'othree/es.next.syntax.vim'
 
 " Themes
 Plug 'joshdick/onedark.vim'
 Plug 'morhetz/gruvbox'
+Plug 'chriskempson/base16-vim'
 
 " Add plugins to &runtimepath
 call plug#end()
@@ -75,7 +85,6 @@ set termguicolors
 "let g:gruvbox_contrast_light='hard'
 "let g:gruvbox_italic             = 1
 "let g:gruvbox_italicize_comments = 1
-"colo gruvbox
 
 colorscheme onedark 
 
@@ -88,15 +97,17 @@ set omnifunc=javascriptcomplete#CompleteJS
 
 " Enable omni completion.
 autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
-autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
-
+augroup FiletypeGroup
+    autocmd!
+    au BufNewFile,BufRead *.jsx set filetype=javascript.jsx
+augroup END
 " tern
-if exists('g:plugs["tern_for_vim"]')
-  let g:tern_show_argument_hints = 'on_hold'
-  let g:tern_show_signature_in_pum = 1
-  autocmd FileType javascript setlocal omnifunc=tern#Complete
-endif
+"if exists('g:plugs["tern_for_vim"]')
+""  let g:tern_show_argument_hints = 'on_hold'
+""  let g:tern_show_signature_in_pum = 1
+""  autocmd FileType javascript setlocal omnifunc=tern#Complete
+"endif
 
 " Linenumbers
 set number
@@ -145,6 +156,33 @@ let g:used_javascript_libs = 'react'
 let g:javascript_plugin_flow = 1
 let g:flow#showquickfix = 0
 
+" Ale
+let g:ale_fixers = {}
+let g:ale_fixers['javascript'] = ['prettier']
+let g:ale_fix_on_save = 1
+let g:ale_javascript_prettier_options = '--single-quote --tab-width 4'
+
+" Required for operations modifying multiple buffers like rename.
+set hidden
+
+" Automatically start language servers.
+let g:LanguageClient_autoStart = 1
+let g:LanguageClient_selectionUI = 'fzf'
+
+let g:LanguageClient_loggingLevel='DEBUG'
+
+let g:LanguageClient_serverCommands = {
+    \ 'rust': ['rustup', 'run', 'stable', 'rls'],
+    \ 'javascript': ['typescript-language-server', '--stdio'],
+    \ 'javascript.jsx': ['typescript-language-server','--stdio'],
+    \ 'css': ['vscode-css-languageserver-bin']
+    \ }
+
+
+nnoremap <silent> K :call LanguageClient_textDocument_hover()<CR>
+nnoremap <silent> gd :call LanguageClient_textDocument_definition()<CR>
+nnoremap <silent> <F2> :call LanguageClient_textDocument_rename()<CR>
+
 " Allways display status line
 set laststatus=2
 
@@ -175,20 +213,26 @@ set colorcolumn=+1
 set sc
 
 " Rainbow Parenthese
-let g:rainbow_active = 0
+let g:rainbow_active = 1
 
 set nostartofline
 
 " Use deoplete.
 let g:deoplete#enable_at_startup = 1
-let g:deoplete#sources#ternjs#filetypes = [
-                \ 'jsx',
-                \ 'javascript.jsx',
-                \ 'vue'
-                \ ]
-let g:deoplete#sources#ternjs#docs = 1
-let g:tern#command = ["tern"]
-let g:tern#arguments = ["--persistent"]
+let g:deoplete#enable_smart_case = 1
+"let g:deoplete#sources = {}
+"let g:deoplete#sources.rust = ['LanguageClient']
+"let g:deoplete#sources.javascript = ['LanguageClient']
+"let g:deoplete#sources.jsx= ['LanguageClient']
+"let g:deoplete#sources.css= ['LanguageClient']
+"let g:deoplete#sources#ternjs#filetypes = [
+"                \ 'jsx',
+"                \ 'javascript.jsx',
+"                \ 'vue'
+"                \ ]
+"let g:deoplete#sources#ternjs#docs = 1
+"let g:tern#command = ["tern"]
+"let g:tern#arguments = ["--persistent"]
 
 " Elm
 let g:elm_detailed_complete = 1
@@ -232,35 +276,4 @@ nnoremap <C-H> <C-W><C-H>
 " Move visual block
 vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
-" ## added by OPAM user-setup for vim / base ## 93ee63e278bdfc07d1139a748ed3fff2 ## you can edit, but keep this line
-let s:opam_share_dir = system("opam config var share")
-let s:opam_share_dir = substitute(s:opam_share_dir, '[\r\n]*$', '', '')
 
-let s:opam_configuration = {}
-
-function! OpamConfOcpIndent()
-  execute "set rtp^=" . s:opam_share_dir . "/ocp-indent/vim"
-endfunction
-let s:opam_configuration['ocp-indent'] = function('OpamConfOcpIndent')
-
-function! OpamConfOcpIndex()
-  execute "set rtp+=" . s:opam_share_dir . "/ocp-index/vim"
-endfunction
-let s:opam_configuration['ocp-index'] = function('OpamConfOcpIndex')
-
-function! OpamConfMerlin()
-  let l:dir = s:opam_share_dir . "/merlin/vim"
-  execute "set rtp+=" . l:dir
-endfunction
-let s:opam_configuration['merlin'] = function('OpamConfMerlin')
-
-let s:opam_packages = ["ocp-indent", "ocp-index", "merlin"]
-let s:opam_check_cmdline = ["opam list --installed --short --safe --color=never"] + s:opam_packages
-let s:opam_available_tools = split(system(join(s:opam_check_cmdline)))
-for tool in s:opam_packages
-  " Respect package order (merlin should be after ocp-index)
-  if count(s:opam_available_tools, tool) > 0
-    call s:opam_configuration[tool]()
-  endif
-endfor
-" ## end of OPAM user-setup addition for vim / base ## keep this line
