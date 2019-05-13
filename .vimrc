@@ -1,23 +1,16 @@
-call plug#begin('~/.vim/plugged')
+call plug#begin('~/.local/share/nvim/plugged')
 
-Plug 'autozimu/LanguageClient-neovim', {
-    \ 'branch': 'next',
-    \ 'do': 'bash install.sh',
-    \ }
+Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}}
+
+Plug 'Shougo/denite.nvim'
+
 Plug 'bling/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'chemzqm/vim-jsx-improve'
-Plug 'othree/es.next.syntax.vim'
-Plug 'othree/javascript-libraries-syntax.vim'
-Plug 'othree/yajs.vim'
 Plug 'othree/html5.vim'
 Plug 'mattn/emmet-vim'
-Plug 'sbdchd/neoformat'
 Plug 'prettier/vim-prettier', {
   \ 'do': 'npm install',
   \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue'] }
-Plug 'sourcegraph/javascript-typescript-langserver'
-Plug 'vscode-langservers/vscode-css-languageserver-bin'
 
 " CSS
 Plug 'cakebaker/scss-syntax.vim'
@@ -25,25 +18,23 @@ Plug 'hail2u/vim-css3-syntax'
 Plug 'othree/csscomplete.vim'
 Plug 'JulesWang/css.vim'
 
+" JS
+Plug 'chemzqm/vim-jsx-improve'
+Plug 'jparise/vim-graphql'
+Plug 'elzr/vim-json'
+Plug 'posva/vim-vue'
+Plug 'othree/javascript-libraries-syntax.vim'
+Plug 'HerringtonDarkholme/yats.vim'
+
 Plug 'Raimondi/delimitMate'
-Plug 'guns/vim-clojure-static'
 Plug 'luochen1990/rainbow'
-Plug 'guns/vim-clojure-highlight'
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
-Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+
 Plug 'elmcast/elm-vim'
 Plug 'apple/swift', {'rtp': 'utils/vim'}
 Plug 'fatih/vim-go'
-Plug 'wokalski/autocomplete-flow'
-Plug 'flowtype/vim-flow'
-Plug 'w0rp/ale'
-Plug 'elzr/vim-json'
-Plug 'marijnh/tern_for_vim', { 'do': 'npm install' }
-Plug 'jacoborus/tender'
-Plug 'posva/vim-vue'
+Plug 'roxma/nvim-yarp'
+Plug 'mitsuse/autocomplete-swift'
 
 " Themes
 Plug 'joshdick/onedark.vim'
@@ -102,12 +93,6 @@ augroup FiletypeGroup
     autocmd!
     au BufNewFile,BufRead *.jsx set filetype=javascript.jsx
 augroup END
-" tern
-"if exists('g:plugs["tern_for_vim"]')
-""  let g:tern_show_argument_hints = 'on_hold'
-""  let g:tern_show_signature_in_pum = 1
-""  autocmd FileType javascript setlocal omnifunc=tern#Complete
-"endif
 
 " Linenumbers
 set number
@@ -151,37 +136,13 @@ set expandtab "Convert TABs into Spaces
 
 " JS
 let javascript_enable_domhtmlcss=1
-let g:jsx_ext_required = 1
+let g:jsx_ext_required = 0
 let g:used_javascript_libs = 'react'
 let g:javascript_plugin_flow = 1
-let g:flow#showquickfix = 0
 
-" Ale
-let g:ale_fixers = {}
-let g:ale_fixers['javascript'] = ['prettier']
-let g:ale_fix_on_save = 1
-let g:ale_javascript_prettier_options = '--single-quote --tab-width 4'
 
 " Required for operations modifying multiple buffers like rename.
 set hidden
-
-" Automatically start language servers.
-let g:LanguageClient_autoStart = 1
-let g:LanguageClient_selectionUI = 'fzf'
-
-let g:LanguageClient_loggingLevel='DEBUG'
-
-let g:LanguageClient_serverCommands = {
-    \ 'rust': ['rustup', 'run', 'stable', 'rls'],
-    \ 'javascript': ['typescript-language-server', '--stdio'],
-    \ 'javascript.jsx': ['typescript-language-server','--stdio'],
-    \ 'css': ['vscode-css-languageserver-bin']
-    \ }
-
-
-nnoremap <silent> K :call LanguageClient_textDocument_hover()<CR>
-nnoremap <silent> gd :call LanguageClient_textDocument_definition()<CR>
-nnoremap <silent> <F2> :call LanguageClient_textDocument_rename()<CR>
 
 " Allways display status line
 set laststatus=2
@@ -217,33 +178,55 @@ let g:rainbow_active = 1
 
 set nostartofline
 
-" Use deoplete.
-let g:deoplete#enable_at_startup = 1
-let g:deoplete#enable_smart_case = 1
-"let g:deoplete#sources = {}
-"let g:deoplete#sources.rust = ['LanguageClient']
-"let g:deoplete#sources.javascript = ['LanguageClient']
-"let g:deoplete#sources.jsx= ['LanguageClient']
-"let g:deoplete#sources.css= ['LanguageClient']
-"let g:deoplete#sources#ternjs#filetypes = [
-"                \ 'jsx',
-"                \ 'javascript.jsx',
-"                \ 'vue'
-"                \ ]
-"let g:deoplete#sources#ternjs#docs = 1
-"let g:tern#command = ["tern"]
-"let g:tern#arguments = ["--persistent"]
-
 " Elm
 let g:elm_detailed_complete = 1
 
 " Close the documentation window when completion is done
 autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
 
-" FZF
-if has('nvim')
-  let $FZF_DEFAULT_OPTS .= ' --inline-info'
-endif
+" === Denite setup ==="
+" Use ripgrep for searching current directory for files
+" By default, ripgrep will respect rules in .gitignore
+"   --files: Print each file that would be searched (but don't search)
+"   --glob:  Include or exclues files for searching that match the given glob
+"            (aka ignore .git files)
+"
+call denite#custom#var('file/rec', 'command', ['rg', '--files', '--glob', '!.git'])
+
+" Use ripgrep in place of "grep"
+call denite#custom#var('grep', 'command', ['rg'])
+
+" Custom options for ripgrep
+"   --vimgrep:  Show results with every match on it's own line
+"   --hidden:   Search hidden directories and files
+"   --heading:  Show the file name above clusters of matches from each file
+"   --S:        Search case insensitively if the pattern is all lowercase
+call denite#custom#var('grep', 'default_opts', ['--hidden', '--vimgrep', '--heading', '-S'])
+
+" Recommended defaults for ripgrep via Denite docs
+call denite#custom#var('grep', 'recursive_opts', [])
+call denite#custom#var('grep', 'pattern_opt', ['--regexp'])
+call denite#custom#var('grep', 'separator', ['--'])
+call denite#custom#var('grep', 'final_opts', [])
+" Custom options for Denite
+"   auto_resize             - Auto resize the Denite window height automatically.
+"   prompt                  - Customize denite prompt
+"   direction               - Specify Denite window direction as directly below current pane
+"   winminheight            - Specify min height for Denite window
+"   highlight_mode_insert   - Specify h1-CursorLine in insert mode
+"   prompt_highlight        - Specify color of prompt
+"   highlight_matched_char  - Matched characters highlight
+"   highlight_matched_range - matched range highlight
+let s:denite_options = {'default' : {
+\ 'auto_resize': 1,
+\ 'direction': 'rightbelow',
+\ 'winminheight': '10',
+\ 'highlight_mode_insert': 'Visual',
+\ 'highlight_mode_normal': 'Visual',
+\ 'prompt_highlight': 'Function',
+\ 'highlight_matched_char': 'Function',
+\ 'highlight_matched_range': 'Normal'
+\ }}
 
 " #########
 " Remap
@@ -252,16 +235,12 @@ endif
 " Remap leader
 :let mapleader =" "
 
-nnoremap <silent> <Leader><Leader> :Files<CR>
-nnoremap <silent> <Leader><Enter>  :Buffers<CR>
-imap <c-x><c-j> <plug>(fzf-complete-file-ag)
-map <C-p> :File<CR>
-
-
 " NerdTree
 map <C-n> :NERDTreeToggle<CR>
 let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
+let g:NERDTreeShowHidden = 1
+let g:NERDTreeIgnore = ['^\.DS_Store$', '^tags$', '\.git$[[dir]]', '\.idea$[[dir]]', '\.sass-cache$']
 
 " Treat long lines as break lines (useful when moving around in them)
 map j gj
@@ -277,3 +256,18 @@ nnoremap <C-H> <C-W><C-H>
 vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
 
+" === Denite shorcuts === "
+"   ;         - Browser currently open buffers
+"   <leader>t - Browse list of files in current directory
+"   <leader>g - Search current directory for occurences of given term and
+"   close window if no results
+"   <leader>j - Search current directory for occurences of word under cursor
+nmap ; :Denite buffer -split=floating -winrow=1<CR>
+nmap <leader>t :Denite file/rec -split=floating -winrow=1<CR>
+nnoremap <leader>g :<C-u>Denite grep:. -no-empty -mode=normal<CR>
+nnoremap <leader>j :<C-u>DeniteCursorWord grep:. -mode=normal<CR>
+
+" === coc.nvim === "
+nmap <silent> <leader>dd <Plug>(coc-definition)
+nmap <silent> <leader>dr <Plug>(coc-references)
+nmap <silent> <leader>dj <Plug>(coc-implementation)
